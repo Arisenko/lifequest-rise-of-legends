@@ -78,3 +78,5 @@
 .creation-avatar.layered-avatar .avatar-hair{transform:translateY(-18%)!important}
 .layered-avatar .avatar-beard{transform:translateY(30%)!important}
 .creation-avatar.layered-avatar .avatar-beard{transform:translateY(30%)!important}
+.layered-avatar .avatar-hair,.creation-avatar.layered-avatar .avatar-hair{background-size:100% 100%!important;background-position:center!important;transform:none!important}
+.layered-avatar .avatar-beard,.creation-avatar.layered-avatar .avatar-beard{background-size:100% 100%!important;background-position:center!important;transform:none!important}
