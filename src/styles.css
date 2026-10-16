@@ -52,3 +52,7 @@
 .skin-fair .avatar-face{filter:saturate(.8) brightness(1.08)}
 .skin-warm .avatar-face{filter:saturate(1.08) sepia(.08)}
 .skin-deep .avatar-face{filter:saturate(.9) brightness(.78)}
+.layered-avatar .avatar-face{background-size:contain!important;background-position:center bottom!important}
+.creation-avatar.layered-avatar .avatar-face{background-size:contain!important;background-position:center bottom!important}
+.creation-options label:nth-child(3){display:none!important}
+.creation-avatar .avatar-mustache,.creation-avatar .avatar-beard{display:none!important}
