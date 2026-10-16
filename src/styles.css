@@ -101,6 +101,10 @@
 .in-game-character .avatar-face { inset:0% 24% 65%; background-size:contain!important; background-position:center bottom!important; }
 .in-game-character .avatar-hair { inset:0% 20% 64%; background-size:contain!important; }
 .in-game-character .avatar-beard { inset:17% 25% 59%; background-size:contain!important; }
+.in-game-character .avatar-body { z-index:0; }
+.in-game-character .avatar-hair { z-index:1; }
+.in-game-character .avatar-face { z-index:2; }
+.in-game-character .avatar-beard { z-index:3; }
 .in-game-character .avatar-body,.in-game-character .avatar-face,.in-game-character .avatar-hair,.in-game-character .avatar-beard { position:absolute; pointer-events:none; background-repeat:no-repeat; }
 .in-game-character .avatar-hair::before { display:none; }
 .in-game-character.hair-1 .avatar-hair { background-image:url('/assets/character-parts/clean-hair-1.png'); }
