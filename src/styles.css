@@ -70,3 +70,7 @@
 .beard-4 .avatar-beard{background-image:url('/assets/character-parts/clean-beard-4.png')!important}
 .beard-5 .avatar-beard{background-image:url('/assets/character-parts/clean-beard-5.png')!important}
 .creation-options label:nth-child(3){display:block!important}
+.layered-avatar .avatar-hair{background-size:82% 82%!important;background-position:center 2%!important}
+.creation-avatar.layered-avatar .avatar-hair{background-size:82% 82%!important;background-position:center 2%!important}
+.layered-avatar .avatar-beard{background-size:58% 58%!important;background-position:center 58%!important}
+.creation-avatar.layered-avatar .avatar-beard{background-size:58% 58%!important;background-position:center 58%!important}
