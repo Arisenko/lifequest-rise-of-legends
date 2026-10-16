@@ -56,3 +56,17 @@
 .creation-avatar.layered-avatar .avatar-face{background-size:contain!important;background-position:center bottom!important}
 .creation-options label:nth-child(3){display:none!important}
 .creation-avatar .avatar-mustache,.creation-avatar .avatar-beard{display:none!important}
+.layered-avatar .avatar-hair{display:block!important;background-size:contain!important;background-position:center top!important;background-repeat:no-repeat!important}
+.hair-1 .avatar-hair{background-image:url('/assets/character-parts/clean-hair-1.png')!important}
+.hair-2 .avatar-hair{background-image:url('/assets/character-parts/clean-hair-2.png')!important}
+.hair-3 .avatar-hair{background-image:url('/assets/character-parts/clean-hair-3.png')!important}
+.hair-4 .avatar-hair{background-image:url('/assets/character-parts/clean-hair-4.png')!important}
+.hair-5 .avatar-hair{background-image:url('/assets/character-parts/clean-hair-5.png')!important}
+.layered-avatar .avatar-mustache{display:none!important}
+.layered-avatar .avatar-beard{display:block!important;background-size:contain!important;background-position:center center!important;background-repeat:no-repeat!important;clip-path:none!important}
+.beard-1 .avatar-beard{background-image:url('/assets/character-parts/clean-beard-1.png')!important}
+.beard-2 .avatar-beard{background-image:url('/assets/character-parts/clean-beard-2.png')!important}
+.beard-3 .avatar-beard{background-image:url('/assets/character-parts/clean-beard-3.png')!important}
+.beard-4 .avatar-beard{background-image:url('/assets/character-parts/clean-beard-4.png')!important}
+.beard-5 .avatar-beard{background-image:url('/assets/character-parts/clean-beard-5.png')!important}
+.creation-options label:nth-child(3){display:block!important}
