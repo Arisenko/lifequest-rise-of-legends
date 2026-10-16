@@ -42,3 +42,13 @@
 .beard-1 .avatar-mustache{background-image:url('/assets/character-parts/beard-1.png')!important}.beard-2 .avatar-mustache{background-image:url('/assets/character-parts/beard-2.png')!important}.beard-3 .avatar-mustache{background-image:url('/assets/character-parts/beard-3.png')!important}.beard-4 .avatar-mustache{background-image:url('/assets/character-parts/beard-4.png')!important}.beard-5 .avatar-mustache{background-image:url('/assets/character-parts/beard-5.png')!important}
 .avatar-composite{display:block!important;background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important}.face-1 .avatar-composite{background-image:url('/assets/character-parts/aligned-1.png')!important}.face-2 .avatar-composite{background-image:url('/assets/character-parts/aligned-2.png')!important}.face-3 .avatar-composite{background-image:url('/assets/character-parts/aligned-3.png')!important}.face-4 .avatar-composite{background-image:url('/assets/character-parts/aligned-4.png')!important}.face-5 .avatar-composite{background-image:url('/assets/character-parts/aligned-5.png')!important}.layered-avatar .avatar-face,.layered-avatar .avatar-hair,.layered-avatar .avatar-mustache,.layered-avatar .avatar-beard{display:none!important}
 .setup{position:relative}.setup-language-toggle{position:absolute;top:22px;right:22px;border:1px solid #b77b72;border-radius:8px;background:#33263b;color:#f8dfb5;padding:8px 11px;font-weight:700;cursor:pointer}.setup-language-toggle:hover{background:#5a3b52}
+.avatar-composite{display:none!important}
+.layered-avatar .avatar-face{display:block!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important}
+.face-1 .avatar-face{background-image:url('/assets/character-parts/clean-face-1.png')!important}
+.face-2 .avatar-face{background-image:url('/assets/character-parts/clean-face-2.png')!important}
+.face-3 .avatar-face{background-image:url('/assets/character-parts/clean-face-3.png')!important}
+.face-4 .avatar-face{background-image:url('/assets/character-parts/clean-face-4.png')!important}
+.face-5 .avatar-face{background-image:url('/assets/character-parts/clean-face-5.png')!important}
+.skin-fair .avatar-face{filter:saturate(.8) brightness(1.08)}
+.skin-warm .avatar-face{filter:saturate(1.08) sepia(.08)}
+.skin-deep .avatar-face{filter:saturate(.9) brightness(.78)}
