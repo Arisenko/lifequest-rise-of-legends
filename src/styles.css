@@ -85,3 +85,5 @@
 .hair-0 .avatar-hair,.beard-0 .avatar-beard{display:none!important;background-image:none!important}
 .creation-options label{display:block!important}
 .creation-options select{display:block!important;width:100%!important}
+.layered-avatar .avatar-hair{transform:translateY(-9%)!important}
+.layered-avatar .avatar-beard{transform:translateY(18%)!important}
