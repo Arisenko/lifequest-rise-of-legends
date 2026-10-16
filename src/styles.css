@@ -82,3 +82,4 @@
 .layered-avatar .avatar-beard,.creation-avatar.layered-avatar .avatar-beard{background-size:100% 100%!important;background-position:center!important;transform:none!important}
 .creation-avatar.layered-avatar .avatar-mustache{display:none!important;background-image:none!important}
 .creation-avatar.layered-avatar .avatar-hair,.creation-avatar.layered-avatar .avatar-beard{left:0!important;right:0!important;top:0!important;bottom:0!important;background-position:50% 50%!important;background-size:100% 100%!important;transform:none!important}
+.hair-0 .avatar-hair,.beard-0 .avatar-beard{display:none!important;background-image:none!important}
