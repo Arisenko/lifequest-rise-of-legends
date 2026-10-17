@@ -1,0 +1,137 @@
+.page-intro {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  height: auto;
+  min-height: 260px;
+  padding: 0;
+  gap: 0;
+  justify-content: normal;
+  align-items: stretch;
+  overflow: hidden;
+  margin: 0 0 24px;
+  border: 1px solid #8f6369;
+  border-radius: 18px;
+  background: radial-gradient(ellipse at top right, #79503755, transparent 70%), linear-gradient(135deg, #332539, #1c1826);
+  box-shadow: inset 0 0 50px #110d1944, 0 12px 30px #0003;
+}
+.page-intro > .scene-art {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1;
+  align-self: center;
+  border-radius: 0;
+}
+.page-intro-copy {
+  min-width: 0;
+  align-self: center;
+  padding: 28px;
+  overflow-wrap: anywhere;
+}
+.page-intro .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  color: #d8b888;
+}
+.page-intro .game-icon { width: 32px; height: 32px; }
+.page-intro h2 {
+  margin: 0 0 14px;
+  color: #ffe2a6;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.page-intro-description {
+  max-width: 65ch;
+  margin: 0;
+  color: #d8c6ba;
+  font-size: .95rem;
+  line-height: 1.75;
+}
+.page-intro-meta { margin-top: 16px; color: #d8b888; font-size: .85rem; }
+.city-expanded, .quest-board, .adventure-board, .group-board { min-width: 0; }
+.quest-period, .city-room, .area-story { margin-top: 24px; }
+.quest-period > h2, .city-room > h3 {
+  color: #ffe2a6;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+.group-board .city-room > h3:first-child { margin-top: 0; }
+.group-board .city-room > p, .quest-board > p { color: #d8c6ba; line-height: 1.75; }
+.return-button,
+.city-room .return-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  max-width: 100%;
+  margin: 0 0 20px;
+  padding: 10px 18px;
+  text-align: left;
+  color: #ffe2a6 !important;
+  background: linear-gradient(135deg, #4e3548, #2a2031) !important;
+  border: 1px solid #bd8d60 !important;
+  border-radius: 10px;
+  box-shadow: 0 3px 0 #140f1b, inset 0 1px #eac48c33;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.return-button .game-icon { width: 28px; height: 28px; }
+.return-arrow { font-size: 1.5rem; color: #efbd76; }
+.return-button:hover:not(:disabled) { filter: brightness(1.15); }
+.return-button:focus-visible { outline: 3px solid #ffe2a6; outline-offset: 3px; }
+.return-button:disabled { opacity: .45; cursor: not-allowed; }
+.area-story > .page-intro { margin-top: 0; }
+.town-room-footer .return-button { margin-bottom: 0; }
+.access-entrance > .enemy-loot { max-width: 160px; }
+.player-stats .stats { gap: 8px; }
+.player-stats .stat { padding: 10px 12px; gap: 3px; border-radius: 10px; box-shadow: none; align-content: start; }
+.player-stats .character-stat-title { display: flex; align-items: center; gap: 6px; line-height: 1.4; white-space: nowrap; font-size: .75rem; }
+.player-stats .character-stat-title .game-icon { width: 24px; height: 24px; }
+.player-stats .stat > b { font-size: 1.2rem; line-height: 1.3; }
+.player-stats .stat > small:not(.character-stat-title) { font-size: .7rem; line-height: 1.4; }
+.player-stats .stat label { font-size: .7rem; line-height: 1.4; margin-top: 4px; }
+.player-stats .stat progress { margin: 4px 0 0; height: 6px; }
+.compact-map { grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); gap: 22px; }
+.compact-map .destination {
+  padding: 0;
+  gap: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  align-items: stretch;
+  border: 2px solid #be9367;
+  background: linear-gradient(145deg, #4a3549, #302536);
+  box-shadow: 0 7px 0 #0e0b13, 0 12px 24px #0006, inset 0 1px #ffe0a633;
+  border-radius: 14px;
+  color: #fff0dc;
+}
+.compact-map .destination > .scene-art { width: 110px; height: 110px; aspect-ratio: 1; border-radius: 0 0 10px 0; align-self: start; }
+.compact-map .destination > div { padding: 20px; min-width: 0; width: 100%; }
+.compact-map .destination strong { display: block; font-size: 1.2rem; line-height: 1.3; color: #ffe0a0; }
+.compact-map .destination small { color: #ded0c8; line-height: 1.5; }
+.compact-map .destination .area-status { display: inline-block; margin: 0 0 10px; padding: 5px 9px; color: #ffdfa1; border: 1px solid #a4774e; border-radius: 5px; background: #17121dbb; font-size: .65rem; letter-spacing: .07em; }
+.compact-map .destination p { margin: 12px 0 18px; color: #e5d7d1; }
+.compact-map .destination b { display: block; border-top: 1px solid #af88615c; padding-top: 12px; color: #ffd28c; }
+.compact-map .destination:hover:not(:disabled) { border-color: #ffe0a0; background: linear-gradient(145deg, #634353, #392c3d); }
+.compact-map .destination:focus-visible { outline: 3px solid #ffe3ae; outline-offset: 5px; }
+.compact-map .destination.area-cleared { border-color: #76b299; }
+.compact-map .destination.area-locked { opacity: 1; cursor: not-allowed; border-color: #776778; box-shadow: 0 5px 0 #0e0b13; background: #2c2632; }
+.compact-map .area-locked > .scene-art { filter: saturate(.45) brightness(.75); }
+.compact-map .area-locked:hover { transform: none; }
+@media (max-width: 650px) {
+  .page-intro { grid-template-columns: 110px minmax(0, 1fr); min-height: 0; }
+  .page-intro > .scene-art {
+    height: 110px;
+    min-height: 0;
+    aspect-ratio: 1;
+    border-right: 0 !important;
+  }
+  .page-intro-copy { padding: 18px 16px; }
+  .page-intro .eyebrow { font-size: .6rem; letter-spacing: .08em; gap: 6px; margin-bottom: 8px; }
+  .page-intro .game-icon { width: 22px; height: 22px; }
+  .page-intro h2 { font-size: 1.35rem; margin-bottom: 8px; }
+  .page-intro-description { font-size: .8rem; line-height: 1.55; }
+}

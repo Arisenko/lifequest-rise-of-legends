@@ -1,0 +1,38 @@
+# LifeQuest – grafická sada v1
+
+Použitý vstavaný nástroj image_gen; nepoužíva platené API z aplikácie ani nový účet. Generované s referenciami existujúceho tela bojovníka a železnej prilby. Tie zostali nezmenené.
+
+## Obsah a nasadenie
+
+- public/assets/art-v1/world-atlas.jpg: 3 × 3, deväť prostredí: Emberfall, akadémia, Zakázaný les, Havranmor, Temný hvozd, Močiar mŕtvych, Mlžné hory, katakomby, raidová citadela.
+- public/assets/art-v1/enemies-atlas.jpg: 6 × 6, 36 samostatných portrétov existujúcich protivníkov vrátane piatich bossov. Použité na kartách aj počas súboja.
+- public/assets/art-v1/icons-atlas.png: 5 × 5, 25 vlastných ikon s transparentným pozadím. Navigácia, atribúty, mestské služby a chat.
+- src/data/art.ts: explicitné mapovanie každého obrázka; pri pridaní nového nepriateľa treba doplniť portrét.
+- src/components/GameArt.tsx: spoločné komponenty ikon, prostredí a portrétov.
+- src/art.css: oddelené štýly novej grafiky, načítané po základnom rozhraní.
+
+## Vizuálne pravidlá
+
+Originálny Dark Cartoon Fantasy: výrazné čierne kontúry, maľované tiene, mierna karikatúra, bordová a slivková, opotrebované kovy a staré zlato, teplé svetlo lampášov. Žiadna fotorealistika, 3D ani pixel art. V obrázkoch nie sú lokalizované texty: SK/EN zostáva v rozhraní a názvy obrázkov pre čítačky používajú vybraný jazyk.
+
+## Optimalizácia a kontrola
+
+Celá sada približne 3,6 MiB v troch zdieľaných súboroch. Prostredia a portréty sú JPEG, ikony PNG s alfou. Jednotlivé náhľady sa vyberajú cez SVG viewBox a clipPath z presnej mriežky, bez ďalšieho načítania súboru pre každú kartu. preserveAspectRatio="xMidYMid meet" zachováva pomer strán a celý náhľad aj v širokom rámci; voľnú plochu dopĺňa tmavé pozadie. Niektoré detaily sú určené na malé náhľady, nie na veľkoformátovú tlač.
+
+Pôvodné zdrojové PNG zostávajú v priečinku generátora, v projekte sú optimalizované verzie. Staré postavy a itemy sa nevymazávali. Nezmenené herné pravidlá, uloženie, ceny, energia a odmeny. Nová sada dopĺňa aktuálny prototyp; samostatné portréty každého obchodníka a ilustrácie interiérov sú možné rozšírenie, nie sú predstierané ako hotové.
+
+Overené v prehliadači na úzkom rozložení: námestie, nové ikony, oblasť Zakázaného lesa a portréty jeho protivníkov. Automatická kontrola mapovania overuje všetkých 36 nepriateľov, päť oblastí a rozsahy atlasov.
+
+## Reprodukovateľné zadania pre generovanie
+
+### Prostredia
+
+Use case: stylized-concept. Asset type: a single production 3x3 square terrain atlas for LIFEQUEST RPG, nine equal square edge-to-edge cells, no gutters, no frames, absolutely no text, no lettering. Reference images are ONLY art-style reference: match their original hand-inked Dark Cartoon Fantasy, chunky black contours, painterly cel-shading, slightly caricatured architecture, burgundy/plum shadows, aged brass and warm amber lighting; not realistic, not 3D, not pixel art. Each cell is a self-contained scenic painting cropped strictly within its own equal square. ROW 1 LEFT: Emberfall town panoramic elevated view cobbled plaza, crooked burgundy-roof cottages, castle, smithy, market stalls, tavern and stable, warm lanterns at dusk, welcoming. ROW1 CENTER: Emberfall Academy, charming crooked magical school with study yard, books, training dummies, amber lit windows, violet roof. ROW1 RIGHT: Forbidden Forest, gnarled roots, stone shrine, green twilight. ROW2 LEFT: Ravenmoor Castle ruins, broken towers and moonlight, crows and deserted bridge. ROW2 CENTER: Darkwood forest, black twisted trees, purple fog and haunted lanterns. ROW2 RIGHT: Marsh of the Dead, black water, blue will-o-wisps and half-submerged bell tower. ROW3 LEFT: Misty Mountains, snowy jagged peaks with amber dwarven forge gate and blue mist. ROW3 CENTER: dungeon catacombs, descending stairs, wrought iron gate, candles and skulls, purple shadows. ROW3 RIGHT: raid dragon citadel, huge volcanic fortress, tiny ember windows, distant winged dragon silhouette, epic red violet sky. Compose main scenery fully readable in central 75% of each tile. Identical brush style and palette across nine cells. This is scenery art, no interface or labels. 2048x2048 if possible.
+
+### Portréty
+
+Use case: stylized-concept. Original LIFEQUEST Dark Cartoon Fantasy game art, match the reference images ONLY for style: chunky black ink outlines, painterly cel shading, exaggerated hand-drawn fantasy proportions, worn iron, burgundy/plum shadows, antique brass highlights and amber rim light. No realism, no 3D, no pixel art, absolutely NO TEXT or labels. Precisely equal tile grid, tiles independent, no gutters, no separators or framing, do not merge neighboring contents. Asset type: single square 6x6 atlas of 36 individual enemy portrait illustrations, each one centered shoulders/head or animal fullhead portrait within its tile, dark aubergine vignette backgrounds with thematic color hint, silhouettes readable at small sizes, keep each face within central 75% of tile and never crop eyes or horns. Six equal rows and columns. Exact row-major subjects: ROW1: slimy green goblin; snarling thorn wolf; wild boar; thorn spider; masked forest bandit; wooden shrine guardian. ROW2: colossal ancient root king boss with branch crown; skeletal castle sentry; animated book golem; undead armored commander; giant castle rat; undead crossbowman. ROW3: spectral knight; hooded executioner; cursed lord of Ravenmoor boss with raven crown; shadow stalker; ragged cloak wraith; wandering shadow spirit. ROW4: night screecher bat monster; black druid with antlers; memory-devourer tentacled spirit; ancient shade boss with violet crown; drowned wanderer; swamp witch. ROW5: marsh crawler lizard; swarm of grave insects; drowned knight; marsh oracle; drowned king boss with waterlogged crown; frost wolf. ROW6: stone colossus; mountain bandit; ice spider; frost shaman; forge guardian armored; Emberlord final boss with molten sword and red crown. All 36 in same style, each unique, more ornate bosses. 2048 square if possible.
+
+### Ikony
+
+Use case: stylized-concept. Original LIFEQUEST Dark Cartoon Fantasy game art, match the reference images ONLY for style: chunky black ink outlines, painterly cel shading, exaggerated hand-drawn fantasy proportions, worn iron, burgundy/plum shadows, antique brass highlights and amber rim light. No realism, no 3D, no pixel art, absolutely NO TEXT or labels. Precisely equal tile grid, tiles independent, no gutters, no separators or framing, do not merge neighboring contents. Asset type: single square 5x5 icon sprite atlas, 25 richly painted small UI emblems. Every icon centered in its own exact equal square tile with generous 18% transparent padding on all sides, no background, genuine transparent canvas, no frames. Exact row-major: ROW1: fantasy town rooftops; warrior portrait silhouette medallion; academy book and quill; compass and crossed swords; dungeon iron key. ROW2: dragon raid head; chat scroll speech bubble; guild banner; sealed private letter; strength crossed hammers. ROW3: intelligence rune orb; discipline kite shield; vitality heart with leaf; energy lightning potion; gold coin stack. ROW4: general merchant leather satchel; armorer breastplate; weaponsmith crossed blades; healer potion bottle; guildhall heraldic building. ROW5: tavern tankard; castle keep; stable horseshoe; arena laurel crossed swords; inventory backpack. Palette aged gold rims, plum/burgundy wood and leather, subtle teal accents. Stylized painted game UI icons, consistent lighting. Avoid emoji appearance. Each icon fully contained in tile, do not crop any part. Transparent 1536 or 2048 square.
