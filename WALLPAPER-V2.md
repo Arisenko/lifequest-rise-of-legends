@@ -1,0 +1,7 @@
+# Emberfall forest wallpaper
+
+Current runtime wallpaper: `public/assets/art-v1/emberfall-forest-city-fixed-v4.webp`. The user retained the forest/valley composition and asked to change only the city at the left. Built-in image edit used the forest v2 wallpaper as the target and `emberfall-market-v2.webp` only as the architecture reference: gray-stone castle, round red-roof towers, burgundy/gold banners, timber shops, potion and blacksmith signs. Right-side forest, quiet center, river, bridge and foreground paths were retained. The full-market v3 proposal is not used by the interface.
+
+Runtime asset: `public/assets/art-v1/emberfall-forest-wallpaper-v2.webp`. The previous `lifequest-world.webp` is retained for comparison or rollback. Only the global wallpaper and its darkening overlay changed; card backgrounds, contrast and game data remain untouched.
+
+Generated with the built-in image generator. Prompt: a wide 16:9 twilight dark-cartoon fantasy landscape in the exact existing LifeQuest painted/inked style, muted burgundy/plum and teal with amber lanterns; Emberfall gateway and crooked rooftops at the far left, twisted ivy-covered forest trunks at the far right, layered mist and subtle cobbled trail below, quiet low-detail center for the interface. No giant foreground props, book, seedling, large heroes, bright moon, interface, logos or lettering. References: existing world wallpaper and Emberfall market illustration. Optimized as WebP, with no additional runtime API or animation.

@@ -1,0 +1,22 @@
+.travel-event-card { margin: 18px 0; padding: 20px; border: 1px solid #ab8a76; border-left: 4px solid #8eaca0; border-radius: 13px; background: linear-gradient(120deg,#3c2c41ee,#242331ee),url('/assets/art-v1/panel-grain.webp') center/320px; box-shadow: inset 0 1px #dfc8a62b,0 6px 20px #100a1855; }
+.travel-event-title { display: flex; align-items: center; gap: 14px; }
+.travel-event-title .combat-icon { width: 54px; height: 54px; flex-shrink: 0; }
+.travel-event-title h3 { margin: 0; color: #ecd9be; }
+.travel-event-card p,.travel-event-receipt p { color: #dfced8; line-height: 1.6; overflow-wrap: anywhere; }
+.travel-event-card small { display: block; color: #bdb0c3; line-height: 1.5; }
+.travel-event-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+.game-shell .travel-event-actions button { flex: 1 1 180px; min-height: 46px; padding: 12px; border: 1px solid #a58a9d; border-radius: 8px; background: linear-gradient(120deg,#57404f,#30283e); color: #f3e1cc; font: 600 .88rem/1.4 'Trebuchet MS',system-ui,sans-serif; }
+.game-shell .travel-event-actions button:hover:not(:disabled) { background: #654d60; }
+.game-shell .travel-event-actions button:focus-visible { outline: 2px solid #b9d5c7; outline-offset: 3px; }
+.travel-event-receipt { padding: 12px 16px; margin: 14px 0; background: #292332; border: 1px solid #705b76; border-radius: 9px; }
+.travel-event-receipt summary { cursor: pointer; color: #d7c3aa; }
+.travel-event-dialog { position: fixed; inset: 0; width: min(580px,calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); margin: auto; padding: 0; overflow-y: auto; overscroll-behavior: contain; border: 1px solid #ad8b80; border-radius: 16px; background: #292131; color: #ecddd0; box-shadow: 0 24px 90px #050308bb; }
+.travel-event-dialog::backdrop { background: #08060fc9; backdrop-filter: blur(5px); }
+.travel-event-dialog .travel-event-card { margin: 0; padding: 28px; border: 0; border-radius: 0; box-shadow: inset 0 1px #dfc8a62b; }
+.travel-event-dialog .travel-event-title .combat-icon { width: 68px; height: 68px; }
+.travel-event-dialog h3 { font: 1.5rem/1.25 'MedievalSharp',Georgia,serif; }
+.travel-event-outcomes { display: grid; grid-template-columns: repeat(auto-fit,minmax(110px,1fr)); gap: 10px; }
+.travel-event-outcomes > div { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 64px; padding: 10px; border: 1px solid #876b8255; border-radius: 9px; background: #211a2c99; }
+.travel-event-outcomes .combat-icon,.travel-event-outcomes .game-icon { width: 32px; height: 32px; }
+.travel-event-outcomes .gold-value { display: flex; align-items: center; gap: 8px; }
+@media(max-width:500px) { .travel-event-dialog .travel-event-card { padding: 20px; } .travel-event-dialog h3 { font-size: 1.25rem; } .travel-event-dialog .travel-event-title .combat-icon { width: 52px; height: 52px; } }

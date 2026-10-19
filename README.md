@@ -8,13 +8,23 @@
 4. Spusť `npm run dev`.
 5. Otvor `http://localhost:5174/`. Terminál nechaj počas hrania otvorený.
 
-Postup sa ukladá automaticky do `localStorage` prehliadača. Tlačidlo „Nová hra“ ho vymaže a začne od začiatku. Prototyp nepoužíva platené API.
+Postup sa ukladá automaticky do `localStorage` prehliadača. Pod ikonou postavy otvor „Uloženie / nová hra“: môžeš exportovať JSON, importovať uloženie alebo obnoviť poslednú platnú zálohu. Nová hra aj import vyžadujú potvrdenie. Poškodené uloženie sa automaticky neprepíše. Prototyp nepoužíva platené API.
 
 ## Rozširovanie hry
 
 Herné dáta sú v `src/data/`, spoločné typy v `src/types/` a ukladanie v `src/systems/`. Vývojový server používa pevný port `5174`; ak je obsadený, Vite skončí s chybou namiesto otvorenia ďalšieho portu.
 
-Aktuálne zapojené systémy: `src/data/playerSystems.ts` (atribúty, váha, inventár, energia), `src/data/battle.ts` (boj), `src/data/questSchedule.ts` (tréning), `src/data/encounters.ts` (nepriatelia) a `src/data/loot.ts` (predmety a korisť). Aktuálny stav hráča sa ukladá v `src/main.tsx`. Staršie pomocné súbory v `src/systems/` zatiaľ nie sú zapojené do aplikácie.
+Aktuálne zapojené systémy: `src/data/playerSystems.ts` (atribúty, váha, inventár, energia), `src/data/battle.ts` (boj), `src/data/questSchedule.ts` (tréning), `src/data/encounters.ts` (nepriatelia) a `src/data/loot.ts` (predmety a korisť). Ukladanie a validáciu zabezpečuje `src/systems/saveService.ts`, React stav `src/systems/usePlayerSave.ts` a hráčske akcie `src/systems/playerActions.ts`. Staré nezapojené duplikáty systémov boli odstránené.
+
+Používaj stále `http://localhost:5174/`: `127.0.0.1` má samostatné úložisko. Lokálna záloha je len predchádzajúci stav v tom istom prehliadači; nenahrádza export mimo prehliadača. Pri importe sa kontroluje formát aj vnorené dáta; budúce neznáme verzie sa neprijmú.
+
+„Stav pred novou hrou / importom“ je samostatný bod návratu: bežné automatické ukladanie ho neprepíše. Nahradí sa až pri ďalšej potvrdenej výmene postavy. Ak uloženie medzičasom zmení iné okno, automatické ukladanie upozorní na konflikt namiesto tichého prepísania.
+
+## Mobil a grafika
+
+Na mobile sú kronika a chat predvolene zbalené; atribúty, HP a energia zostávajú viditeľné. Navigácia je prichytená a po výbere posunie na obsah. Detail predmetu je rolovateľný a ovládateľný klávesnicou.
+
+Predmety, portréty a logo používajú optimalizované WebP cez `src/data/optimizedAssets.json`; originály PNG zostávajú ako zdrojové podklady. Regenerovanie: `python3 scripts/optimize_assets.py` (vyžaduje Pillow). Systém nemení pomer strán ani alfa kanál. Zatvorené setové katalógy vykreslia obsah až po otvorení.
 
 ## Inventár, atribúty a energia
 

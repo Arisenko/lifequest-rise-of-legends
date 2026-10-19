@@ -1,12 +1,29 @@
+import { arcaneStock } from './magicItems';
 import { equipItem } from './equipment';
 import { itemData, potions } from './loot';
-import { canReceive } from './playerSystems';
+import { canReceive, derivedStats } from './playerSystems';
 import type { PlayerState } from './playerSystems';
 import { mounts } from './mounts';
 
 export const SHOP_INTERVAL = 6 * 60 * 60 * 1000;
 export const GUILD_FEE = 100000;
-export type Merchant = 'nira' | 'armorer' | 'weaponsmith' | 'vela';
+export const LODGING_PRICE = 1000;
+export function rentLodging<Hero extends CityPlayer>(hero:Hero,now=Date.now()):Hero{
+  if(hero.battle&&!hero.battle.ended||hero.energyResting||hero.gold<LODGING_PRICE)return hero;
+  return {...hero,gold:hero.gold-LODGING_PRICE,energyResting:true,energyUpdatedAt:now,lodgingUpdatedAt:now};
+}
+type TreatmentPlayer=CityPlayer & {effects:{name:string;turns:number}[];restUntil?:number};
+export function treatmentPrice(level:number) {
+  return 100*Math.min(100,Math.max(1,Math.floor(Number.isFinite(level)?level:1)));
+}
+export function canTreat(hero:TreatmentPlayer,now=Date.now()) {
+  return !(hero.battle&&!hero.battle.ended)&&hero.gold>=treatmentPrice(hero.level)&&(hero.hp<derivedStats(hero).maxHp||(hero.restUntil||0)>now||hero.effects.some(effect=>effect.name==='Oslabenie'&&effect.turns>0));
+}
+export function treatPlayer<Hero extends TreatmentPlayer>(hero:Hero,now=Date.now()):Hero {
+  if(!canTreat(hero,now))return hero;
+  return {...hero,gold:hero.gold-treatmentPrice(hero.level),hp:derivedStats(hero).maxHp,restUntil:undefined,effects:hero.effects.filter(effect=>effect.name!=='Oslabenie')};
+}
+export type Merchant = 'nira' | 'armorer' | 'weaponsmith' | 'vela' | 'arcane';
 export type GuildRole = 'master' | 'trustee' | 'moderator' | 'member';
 export type GuildMember = { name: string; role: GuildRole };
 export type Guild = { name: string; founder: string; members: GuildMember[] };
@@ -15,7 +32,7 @@ export function itemPrice(id: string) { return itemData[id]?.price || ({ 'Rusty 
 export function salePrice(id: string) { return Math.max(1, Math.floor(itemPrice(id) / 3)); }
 export function shopPeriod(now = Date.now()) { return Math.floor(now / SHOP_INTERVAL); }
 export function stock(merchant: Merchant, level: number, now = Date.now()) {
-  const pools: Record<Merchant, string[]> = { nira: ['Rusty charm','Copper ring','Amber necklace','Sun ring','War drum','Healing herb'], armorer: ['Iron helm','Leather armor','Linen gloves','Scout pants','Iron shoulders','Guard boots','Ember cloak'], weaponsmith: ['Training sword','Guard blade','Apprentice wand','Oak staff','Runic staff'], vela: potions };
+  const pools: Record<Merchant, string[]> = { nira: ['Rusty charm','Copper ring','Amber necklace','Sun ring','War drum','Healing herb'], armorer: ['Iron helm','Leather armor','Linen gloves','Scout pants','Iron shoulders','Guard boots','Ember cloak'], weaponsmith: ['Training sword','Guard blade','Hunter bow','Shadow dagger','Sun shield'], arcane:arcaneStock, vela: potions };
   const pool = pools[merchant].filter(id => (itemData[id]?.level || 1) <= level);
   const rotation = shopPeriod(now) % pool.length;
   const offers = Array.from({length: Math.min(3, pool.length)}, (_, index) => pool[(rotation + index) % pool.length]);
@@ -30,7 +47,7 @@ export function purchase<Hero extends CityPlayer>(hero: Hero, merchant: Merchant
 }
 export function sellToNira<Hero extends CityPlayer>(hero: Hero, index: number): Hero {
   const id = hero.inventory[index];
-  if (!id || itemData[id]?.access || hero.battle && !hero.battle.ended) return hero;
+  if (!id || itemData[id]?.access || itemData[id]?.routeTarget || hero.battle && !hero.battle.ended) return hero;
   return { ...hero, gold: hero.gold + salePrice(id), inventory: hero.inventory.filter((_, position) => position !== index) };
 }
 export function ownsMount(hero: CityPlayer, id: string) {
@@ -39,7 +56,7 @@ export function ownsMount(hero: CityPlayer, id: string) {
 }
 export function buyMount<Hero extends CityPlayer>(hero: Hero, id: string): Hero {
   const mount = mounts.find(entry => entry.id === id);
-  if (!mount || hero.level < mount.level || hero.gold < mount.price || ownsMount(hero,id) || !canReceive(hero,'Mount '+id) || hero.battle && !hero.battle.ended) return hero;
+  if (!mount || mount.source || hero.level < mount.level || hero.gold < mount.price || ownsMount(hero,id) || !canReceive(hero,'Mount '+id) || hero.battle && !hero.battle.ended) return hero;
   return equipItem({ ...hero, gold: hero.gold - mount.price, inventory:[...hero.inventory,'Mount '+id], ownedMounts: [...new Set([...(hero.ownedMounts || []), id])] },hero.inventory.length,'Mount');
 }
 export function createGuild<Hero extends CityPlayer>(hero: Hero, name: string): Hero {

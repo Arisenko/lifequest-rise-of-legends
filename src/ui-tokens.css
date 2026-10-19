@@ -1,0 +1,67 @@
+:root {
+  --ui-surface: #292333;
+  --ui-surface-deep: #17131e;
+  --ui-border: #896951;
+  --ui-text: #f7ecd8;
+  --ui-muted: #d0bbc6;
+  --ui-accent: #e7b873;
+  --ui-danger: #ffaaa3;
+  --ui-radius: 12px;
+  --ui-gap: 12px;
+  --ui-focus: 0 0 0 3px #ffe0a6;
+}
+.game-shell .game-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 25;
+  display: grid;
+  grid-template-columns: repeat(6,minmax(0,1fr));
+  gap: 6px;
+  padding: 8px;
+  background: #211927f5;
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius);
+  backdrop-filter: blur(8px);
+}
+.game-shell > header { position: relative; z-index: 30; }
+.profile-menu .profile-dropdown { width: 220px; max-width: calc(100vw - 40px); }
+.game-navigation button { min-height: 48px; min-width: 0; overflow-wrap: anywhere; }
+.game-shell .content { scroll-margin-top: calc(var(--navigation-height,160px) + 12px); }
+.responsive-disclosure { max-width: 1040px; margin: 0 auto; min-width: 0; }
+.disclosure-toggle { display: none; }
+.save-panel { max-width: 1040px; margin: 20px auto; padding: 20px; border: 1px solid var(--ui-border); border-radius: var(--ui-radius); background: var(--ui-surface); color: var(--ui-text); }
+.save-panel h2 { font-size: 1.4rem; }
+.save-panel p { line-height: 1.6; overflow-wrap: anywhere; }
+.save-actions { display: flex; gap: var(--ui-gap); flex-wrap: wrap; }
+.save-actions button { min-height: 44px; padding: 10px 14px; border: 1px solid var(--ui-border); border-radius: 8px; background: #694536; color: var(--ui-text); }
+.save-actions button.danger { background: #663440; }
+.save-actions button:focus-visible, .disclosure-toggle:focus-visible { outline: 3px solid var(--ui-accent); outline-offset: 3px; }
+.save-warning { max-width: 1040px; padding: 16px; margin: 12px auto; background: #57303d; color: var(--ui-text); border: 1px solid var(--ui-danger); }
+.save-confirm { color: var(--ui-text); }
+.recovery-screen { max-width: 900px; margin: 40px auto; padding: 20px; }
+.creation-save-tools { max-width: 880px; margin: 20px auto; padding: 16px; color: var(--ui-text); }
+.creation-save-tools > summary { cursor: pointer; min-height: 44px; }
+.game-shell button:not(.item-preview) { min-height: 44px; }
+.loot-dialog, .equipment-modal { max-height: calc(100dvh - 32px); overflow-y: auto; overscroll-behavior: contain; }
+@media (max-width: 700px) {
+  .game-shell .game-navigation { grid-template-columns: repeat(3,minmax(0,1fr)); border-radius: 0; }
+  .game-navigation button { gap: 5px; padding: 8px 4px; font-size: .8rem; }
+  .game-navigation .game-icon { width: 24px; height: 24px; }
+  .game-shell .content { scroll-margin-top: calc(var(--navigation-height,160px) + 12px); }
+  .disclosure-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 44px; gap: 10px; padding: 12px; background: var(--ui-surface); color: var(--ui-text); border: 1px solid var(--ui-border); border-radius: 8px; text-align: left; }
+  .responsive-disclosure:not(.is-open) > .disclosure-body { display: none; }
+  .responsive-disclosure { margin: 12px 0; }
+  .game-shell > .responsive-disclosure { margin: 12px 18px; }
+  .game-shell .hero-banner { padding: 16px; margin: 12px 18px; }
+  .game-shell .hero-banner h1 { font-size: 1.55rem; }
+  .game-shell .hero-banner > div > p:not(.eyebrow) { margin: 8px 0; font-size: .85rem; }
+  .game-shell .hero-banner .level { padding: 14px; margin-top: 12px; }
+  .game-shell .global-attributes small { display: none; }
+  .game-shell .global-attributes > span { min-height: 44px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+  .game-shell .global-attributes .game-icon { float: none; margin: 0; }
+  .game-shell .inventory-card .game-button, .game-shell .shop-item .game-button { font-size: .8rem; }
+  .save-panel { margin: 12px 18px; padding: 16px; }
+  .save-actions > button { flex: 1 1 130px; }
+  .page-intro { grid-template-columns: 1fr; }
+  .page-intro > .scene-art { width: 100%; height: auto; aspect-ratio: 2; }
+}

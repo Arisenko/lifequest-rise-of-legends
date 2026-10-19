@@ -1,0 +1,68 @@
+.journey-hazard-art { display: block; width: 116px; height: 116px; flex: 0 0 auto; border-radius: 12px; margin: 0 auto 16px; }
+.adventure-environment .encounter-grid { padding:18px; border:1px solid #806276; border-radius:16px; background:linear-gradient(#211b2944,#18132077),url('/assets/art-v1/encounter-leather-v1.jpg') center/700px; box-shadow:inset 0 1px #ecd3bf26,inset 0 0 36px #100c1b66,0 10px 25px #100a1744; }
+.game-shell .adventure-environment .encounter-card:not(.encounter-locked) { --panel-material:url('/assets/art-v1/encounter-leather-v1.jpg'); --material-scale:480px; --material-tint:#382a3a55; --material-shade:#211c2b88; }
+@media(max-width:640px){.adventure-environment .encounter-grid { padding:10px; }}
+.battle-reward-item { display:flex; flex-direction:column; gap:10px; min-width:0; max-width:100%; }
+.battle-reward-item small { display:block; line-height:1.5; overflow-wrap:anywhere; }
+.equipment-comparison { border:1px solid #846879; border-radius:10px; padding:12px; background:linear-gradient(135deg,#34283e,#211e2c); text-align:left; }
+.equipment-comparison summary { cursor:pointer; color:#edcfb7; font-weight:600; line-height:1.5; }
+.equipment-comparison h5 { margin:16px 0 10px; font-size:.85rem; color:#d9c4c2; }
+.equipment-comparison dl { margin:10px 0; }
+.equipment-comparison dl>div { display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 12px; padding:7px 0; border-bottom:1px solid #ac87972b; font-size:.8rem; }
+.equipment-comparison dd { margin:0; font-variant-numeric:tabular-nums; }
+.comparison-gain { color:#a9ddbd; }
+.comparison-loss { color:#f0a7ac; }
+.game-shell .reward-equip-button { display:flex; align-items:center; justify-content:center; gap:12px; min-height:56px; padding:12px 18px; border:1px solid #c3918d; border-radius:10px; background:linear-gradient(135deg,#704352,#3a2b43); box-shadow:inset 0 1px #f2d0bf33,0 4px 0 #17111f; color:#fff0e1; font:600 .95rem/1.4 'Trebuchet MS',system-ui,sans-serif; text-align:left; }
+.reward-equip-button .combat-icon { width:32px; height:32px; flex-shrink:0; }
+.reward-equip-arrow { margin-left:auto; font-size:1.3rem; }
+.game-shell .reward-equip-button:not(:disabled):hover { background:linear-gradient(135deg,#855467,#49334f); border-color:#edc1b3; }
+.game-shell .reward-equip-button:focus-visible { outline:2px solid #efd3bb; outline-offset:4px; }
+.inventory-tabs,.supply-slots,.supply-options { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }
+.inventory-tabs [aria-pressed="true"] { background:#684654; border-color:#e3b797; }
+.supply-slot { display:flex; flex-direction:column; align-items:center; gap:10px; width:140px; min-height:150px; padding:14px; border:1px solid #927381; border-radius:12px; background:#241e30; text-align:center; }
+.supply-slot .item-sprite,.supply-options .item-sprite { width:64px; height:64px; }
+.supply-slot strong { overflow-wrap:anywhere; font-size:.85rem; }
+.game-shell .page-intro-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-inline: clamp(24px,4vw,64px); }
+.game-shell .page-intro-copy .eyebrow { justify-content: center; }
+.game-shell .city-service-links { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; width:100%; max-width:600px; margin:6px auto 0; }
+.game-shell .city-service-links button { justify-content:center; width:100%; min-width:0; text-align:center; overflow-wrap:anywhere; }
+.game-shell .city-service-links button>span:not(.game-art) { min-width:0; flex:1; display:block; font:600 .82rem/1.45 'Trebuchet MS',system-ui,sans-serif; text-wrap:balance; overflow-wrap:normal; }
+.game-shell .city-service-links button small { display:block; margin-top:3px; color:#d6b996; font-size:.7rem; line-height:1.35; }
+.game-shell .city-service-links .gold-value { display:inline-flex; align-items:center; justify-content:center; gap:5px; }
+.game-shell .city-service-links .gold-value .game-icon { width:21px; height:21px; }
+.game-shell .tavern-lodging-button { display:flex; align-items:center; gap:14px; width:100%; max-width:640px; padding:16px 20px; min-height:88px; border:1px solid #b78b85; border-radius:14px; background:linear-gradient(120deg,#654251bb,#2d253dd9),url('/assets/art-v1/encounter-leather-v1.jpg') center/450px; box-shadow:inset 0 1px #f3d6ba33,0 5px 0 #15101d; color:#f5e4d2; text-align:left; }
+.tavern-bed-icon { width:62px; height:62px; object-fit:contain; flex-shrink:0; filter:drop-shadow(0 4px 3px #0006); }
+.tavern-lodging-copy { display:flex; flex:1; min-width:0; flex-direction:column; gap:5px; }
+.tavern-lodging-copy strong { font:600 1rem/1.4 'Trebuchet MS',system-ui,sans-serif; }
+.tavern-lodging-copy small { color:#d3bdc6; font-size:.78rem; line-height:1.5; }
+.tavern-lodging-price { padding:9px 12px; border:1px solid #b8946266; border-radius:9px; background:#1d172b99; white-space:nowrap; }
+.tavern-lodging-price .gold-value { display:inline-flex; align-items:center; gap:7px; font-weight:700; }
+.tavern-lodging-price .game-icon { width:28px; height:28px; }
+.lodging-progress { margin:22px 0; padding:20px; border:1px solid #9a7684; border-radius:14px; background:linear-gradient(120deg,#463042b3,#211c30dd); color:#ecddcf; }
+.lodging-progress>div { display:flex; flex-direction:column; gap:8px; margin:16px 0; }
+.lodging-progress progress { width:100%; height:14px; accent-color:#b57482; }
+.lodging-progress>div+div progress { accent-color:#7eaeb8; }
+.lodging-progress span { font-variant-numeric:tabular-nums; font-size:.88rem; }
+.game-shell .tavern-lodging-button:not(:disabled):hover { border-color:#e3bba0; box-shadow:inset 0 1px #f3d6ba44,0 5px 0 #15101d,0 0 20px #b2786622; }
+.game-shell .tavern-lodging-button:focus-visible { outline:2px solid #f0cfad; outline-offset:4px; }
+@media(max-width:480px){.game-shell .tavern-lodging-button { flex-wrap:wrap; padding:14px; }.tavern-bed-icon { width:48px; height:48px; }.tavern-lodging-price { margin-left:auto; }}
+.game-shell .city-building { overflow:hidden; transition:border-color .18s,box-shadow .18s; }
+.game-shell .city-square>.city-building-grid { padding:20px; border:1px solid #97766c; border-radius:18px; background:linear-gradient(135deg,#30233444,#19162388),url('/assets/art-v1/emberfall-market-stone-v1.jpg') center/600px; box-shadow:inset 0 1px #e9cba833,inset 0 0 35px #140e1b66,0 10px 26px #100b1844; }
+@media(max-width:640px){.game-shell .city-square>.city-building-grid { padding:12px; background-size:auto,440px; }}
+.game-shell .city-building>.city-building-entrance { display:flex; align-items:center; gap:10px; width:100%; margin-top:12px; padding:11px 13px; border:1px solid #aa7e756e; border-radius:10px; background:linear-gradient(120deg,#6b435276,#2d253ccc),url('/assets/art-v1/panel-grain.webp') center/240px; box-shadow:inset 0 1px #e6c3ac26,0 3px 0 #100d1880; color:#efd9c4; font-size:.9rem; }
+.city-building-entrance>.city-door-icon { width:38px; height:42px; object-fit:contain; flex-shrink:0; filter:drop-shadow(0 2px 2px #0006); }
+.city-entrance-label { flex:1; min-width:0; font:600 .9rem/1.4 'Trebuchet MS',system-ui,sans-serif; text-align:left; text-wrap:balance; }
+.city-entrance-arrow { color:#d5ac95; font-size:1.8rem; line-height:1; }
+.game-shell .city-building:hover>.city-building-entrance { border-color:#d9aa92; background-color:#6e4555; box-shadow:inset 0 1px #f3d8bc3b,0 3px 0 #100d1880,0 0 15px #ad726326; }
+.game-shell .city-building:focus-visible { outline:2px solid #f1ceb0; outline-offset:4px; }
+@media(prefers-reduced-motion:reduce){.game-shell .city-building { transition:none; }}
+@media(max-width:700px){.game-shell .city-service-links button { flex-direction:column; padding:8px 5px; font-size:.72rem; }}
+.game-shell .page-intro-copy > * { width: 100%; max-width: 60ch; margin-inline: auto; }
+.game-shell .journey-node.accepted { border-color: #d0b078; box-shadow: inset 0 0 0 1px #d0b078; }
+@media(max-width:640px) { .game-shell .page-intro-copy { padding-inline: 16px; } }
+.game-shell .adventure-map.compact-map { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+.game-shell .adventure-map.compact-map .destination { display: flex; flex-direction: column; text-align: left; min-width: 0; border-color: #ad7d71; background: linear-gradient(140deg,#483047,#231e30); }
+.game-shell .adventure-map.compact-map .destination > .scene-art { width: 100%; height: auto; aspect-ratio: 16/9; border-radius: 0; flex: 0 0 auto; border-bottom: 2px solid #b0816a; }
+.game-shell .adventure-map.compact-map .destination > div { flex: 1; padding: 18px 20px; }
+.game-shell .adventure-map.compact-map .destination:not(:disabled):hover { border-color: #efbd96; box-shadow: 0 7px 0 #0e0b13,0 10px 25px #bb765530; }
+@media(max-width:640px) { .game-shell .adventure-map.compact-map { grid-template-columns: minmax(0,1fr); } }

@@ -1,0 +1,11 @@
+# Adventures through level 100
+
+Sixteen new areas are appended after the existing level-20 Observatory, recommended levels 25, 30, 35 … 100. Existing area and enemy IDs stay unchanged; saves retain their progress. Each new area has four normal foes, three elites and a final boss, for 128 additional encounters. All names, descriptions and mechanics are bilingual.
+
+Each of the sixteen areas has a distinct landscape, story and set of eight enemies. There are 128 distinct localized enemy names and 128 separately painted portraits, with no repeated portraits or landscape frames between areas. The eight paired themes have different exterior and interior settings rather than duplicated levels. Atlas assets are `late-regions-v1.webp` and `late-inner-regions-v1.webp` (4×2 each), and `late-enemies-v1.webp` and `late-inner-enemies-v1.webp` (8×8 each), locally WebP-compressed.
+
+The existing shared reward balancing, rarity ceilings, boss key drops, sequential enemy discovery and area unlocking apply unchanged. HP, attack and XP/gold scale by recommended area level, with elite/boss bonuses still applied centrally. These are recommended levels rather than a new hard level gate. Random mandatory travel events remain active on first progression victories.
+
+New encounter combat profiles are consumed by the actual battle resolver, warning countdown, effect details and enemy preview. Effect power scales with level and rank; boss effects last four turns from level 60, and bosses use specials every two turns from level 75. Special damage multipliers, shields, life drain and below-half-health enrage increase with level. Guard still reduces incoming damage and blocks newly applied harmful effects; resistance still reduces poison/burn damage. Old enemies and old saved encounters without a profile retain their original 3-turn / 180% / 35%-enrage defaults. Scaled profiles persist through save/load validation.
+
+Coverage checks require all sixteen five-level steps, exactly eight foes per new area, unique canonical IDs, valid drops and atlas coordinates, semantic attack mappings, sequential progression across all 23 areas and existing anti-spoiler behavior. No new raid mechanics or loot rarity exceptions are introduced.

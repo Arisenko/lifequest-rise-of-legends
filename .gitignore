@@ -9,3 +9,6 @@ dist/
 coverage/
 outputs/
 work/
+lifequest-backup*.json
+lifequest-recovery*.json
+LifeQuest-project*.tar.gz

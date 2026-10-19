@@ -1,0 +1,12 @@
+.city-square > .page-intro{background:#241a2c;border-color:#b28a59;box-shadow:inset 0 1px #ffe2a62e,0 12px 30px #0004}
+.city-square > .page-intro .page-intro-copy{background:linear-gradient(110deg,#24192c52,#20182726),url('/assets/art-v1/emberfall-guild-banner-v1.webp') center/cover no-repeat;border-left:1px solid #d3a66340}
+.city-square > .page-intro > .scene-art{aspect-ratio:1;box-shadow:0 0 38px #eaaa3824}
+@media(min-width:701px){.city-square > .page-intro > .scene-art{position:relative;align-self:stretch;aspect-ratio:auto;min-height:260px}.city-square > .page-intro > .scene-art>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}}
+.city-service-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.game-shell .city-service-links button{display:flex;align-items:center;gap:8px;min-height:44px;max-width:100%;margin:0;padding:8px 10px;border:1px solid #b48c5966;border-radius:10px;background:linear-gradient(135deg,#79513955,#352536bb);color:#edd7b3;font-family:inherit;font-size:.8rem;line-height:1.35;text-align:left;white-space:normal}
+.game-shell .city-service-links button:hover{border-color:#e2b877;background:#64434f}
+.city-service-links .game-icon{width:26px;height:26px;flex-shrink:0}
+.game-shell .player-shortcuts{left:auto;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));padding:0;gap:0;background:none;border:0;box-shadow:none}
+.game-shell .player-shortcuts button{display:flex;align-items:center;justify-content:center;gap:9px;flex:none;min-width:104px;min-height:46px;padding:10px 17px;border:1px solid #b08b60;border-radius:24px;background:linear-gradient(145deg,#59404f,#2d2333);box-shadow:inset 0 1px #f6d59a26,0 5px 18px #110b1b80;color:#f0dec0;font-family:Palatino,Georgia,serif;font-size:.9rem;font-weight:600;letter-spacing:.02em}
+.game-shell .player-shortcuts button:hover{background:linear-gradient(145deg,#765364,#392a40);border-color:#edc58a}
+@media(max-width:700px){.city-square > .page-intro .page-intro-copy{border-left:0;border-top:1px solid #d3a66340}.city-service-links{display:grid;grid-template-columns:1fr}.game-shell .player-shortcuts button{min-width:92px;min-height:44px;padding:9px 14px}}

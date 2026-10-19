@@ -1,0 +1,50 @@
+.quest-board > .page-intro { background: #241b2e; border-color: #736477; }
+.quest-board > .page-intro .page-intro-copy { background: linear-gradient(110deg,#201a2d26,#201a2d12),url('/assets/art-v1/academy-parchment-v3.webp') center/cover no-repeat; }
+.quest-board .quests.training-carousel { display: grid; grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: min(420px,86%); align-items: start; gap: 16px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding: 4px; padding: 4px 4px 16px; scrollbar-width: thin; scrollbar-color: #8b708c #211b2c; }
+.training-carousel > .quest { scroll-snap-align: start; }
+.training-carousel:focus-visible { outline: 2px solid #b3c8bd; outline-offset: 4px; }
+.training-period-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.training-period-heading h2 { margin: 0; min-width: 0; }
+.training-carousel-controls { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.training-carousel-controls span { color: #cdbdd0; font-size: .8rem; font-variant-numeric: tabular-nums; }
+.game-shell .training-carousel-controls button { min-width: 44px; min-height: 44px; border: 1px solid #84718f; border-radius: 10px; color: #eee0ce; background: #3b2e46; font: 1.3rem system-ui,sans-serif; }
+.game-shell .training-carousel-controls button:hover:not(:disabled) { background: #51405e; }
+.game-shell .training-carousel-controls button:disabled { opacity: .35; cursor: default; }
+.game-shell .training-carousel-controls button:focus-visible { outline: 2px solid #b3c8bd; outline-offset: 2px; }
+.quest-board .quest.card { align-items: flex-start; min-width: 0; background: linear-gradient(125deg,#302437ed,#211c2ded),url('/assets/art-v1/academy-desk-v1.webp') center/cover; border: 1px solid #756078; box-shadow: inset 0 1px #d7bfa323,0 6px 18px #110c1d66; border-radius: 14px; }
+.quest-board .quest.done { opacity: .78; border-color: #587765; }
+.training-activity-icon { display: block; flex: 0 0 64px; width: 64px; height: 64px; overflow: hidden; border-radius: 10px; box-shadow: 0 3px 10px #100b1899; }
+.quest-board .quest-copy > b { display: block; font-size: 1rem; line-height: 1.4; color: #f2dfc4; overflow-wrap: anywhere; }
+.quest-board .quest-copy small { color: #cbbdcf; line-height: 1.55; }
+.quest-board .quest-copy progress { accent-color: #80b6a0; }
+.game-shell .quest-board .game-button.training-confirm { display: block; width: 100%; margin: 14px 0 0; min-height: 46px; padding: 10px 12px; border: 1px solid #829a91; border-radius: 9px; background: linear-gradient(135deg,#3c504d,#30283f); color: #f2e6d7; font: 600 .88rem/1.4 'Trebuchet MS',system-ui,sans-serif; white-space: normal; box-shadow: inset 0 1px #d9ecd226,0 3px 8px #100a1955; }
+.game-shell .quest-board .game-button.training-confirm:not(:disabled):hover { background: linear-gradient(135deg,#4b6861,#41324e); border-color: #aecab8; }
+.game-shell .quest-board .game-button.training-confirm:focus-visible { outline: 2px solid #c3dbc9; outline-offset: 3px; }
+.game-shell .quest-board .game-button.training-confirm:disabled { opacity: .55; cursor: not-allowed; }
+.training-level-note { padding: 12px 16px; border-left: 3px solid #82a99c; background: #2b2537; border-radius: 6px; }
+.quest-board .quest.card { display: grid; grid-template-columns: 64px minmax(0,1fr); align-content: start; }
+.quest-board .quest-copy { display: contents; }
+.quest-board .quest-copy > b { grid-column: 2; align-self: center; }
+.quest-board .quest-copy > small { grid-column: 1 / -1; margin: 0; }
+.quest-board .quest-copy > label,.quest-board .quest-copy > button,.quest-board .training-cooldown { grid-column: 1 / -1; }
+.training-rewards { grid-column: 1 / -1; min-width: 0; padding: 12px; border: 1px solid #89708b55; border-radius: 10px; background: #19152299; }
+.quest-board .training-rewards h3 { margin: 0 0 10px; font: 600 .7rem/1.4 'Trebuchet MS',system-ui,sans-serif; text-transform: uppercase; letter-spacing: .06em; color: #cdb8ca; }
+.training-reward-values { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 6px; }
+.training-reward-values > div { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; min-width: 0; padding: 8px 3px; border-radius: 7px; background: #44324d55; text-align: center; }
+.training-reward-values .game-icon { width: 26px; height: 26px; }
+.training-reward-values strong { color: #efdfc8; font: 600 .85rem/1.4 'Trebuchet MS',system-ui,sans-serif; overflow-wrap: anywhere; }
+.quest-board .training-reward-values small { font-size: .65rem; margin: 0; }
+.training-reward-values .gold-value { display: flex; flex-direction: column; gap: 4px; color: #efdfc8; font: 600 .85rem/1.4 'Trebuchet MS',system-ui,sans-serif; }
+.training-item-reward { margin-top: 12px; padding-top: 10px; border-top: 1px solid #89708b44; }
+.training-item-reward > p { margin: 0 0 8px; color: #e0cbb7; font-size: .78rem; }
+.quest-board .training-item-reward > p small { margin: 3px 0 0; font-size: .65rem; }
+.game-shell .training-item-reward .enemy-loot { margin: 0; }
+.game-shell .training-item-reward .enemy-loot-grid { display: block; }
+.game-shell .training-item-reward .enemy-loot .item-preview { display: grid; grid-template-columns: 48px minmax(0,1fr); grid-template-rows: auto auto auto; align-items: center; column-gap: 10px; row-gap: 2px; width: 100%; height: auto; min-height: 74px; padding: 10px; text-align: left; }
+.game-shell .training-item-reward .enemy-loot .item-preview .item-preview-art { grid-row: 1 / 4; width: 48px; height: 48px; }
+.game-shell .training-item-reward .enemy-loot .item-preview img { width: 44px; height: 44px; }
+.game-shell .training-item-reward .enemy-loot .item-preview .item-preview-name { display: block; min-height: 0; font-size: .8rem; overflow: visible; }
+.game-shell .training-item-reward .enemy-loot .item-preview small { margin: 0; font-size: .65rem; }
+.quest-board .training-cooldown { font-size: .8rem; line-height: 1.55; overflow-wrap: anywhere; }
+@media(max-width:600px) { .training-period-heading { align-items: flex-start; flex-wrap: wrap; } .training-period-heading h2 { font-size: 1.45rem; } .quest-board .quests.training-carousel { grid-auto-columns: 92%; } }
+@media(max-width:420px) { .quest-board .quest.card { grid-template-columns: 48px minmax(0,1fr); padding: 14px; gap: 10px; } .training-activity-icon { flex-basis: 48px; width: 48px; height: 48px; } .training-rewards { padding: 8px; } }

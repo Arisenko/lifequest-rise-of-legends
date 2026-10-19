@@ -1,0 +1,59 @@
+.lifequest-brand { display: flex; align-items: center; flex-shrink: 0; max-width: 100%; }
+.lifequest-logo { display: block; width: 280px; max-width: 100%; height: auto; object-fit: contain; filter: drop-shadow(0 4px 5px #0007); }
+.lifequest-brand-large .lifequest-logo { width: 560px; }
+.game-shell > header { flex-wrap: wrap; }
+.game-shell > header .hero-mini { gap: 14px; min-width: 0; flex-wrap: wrap; }
+.game-shell .profile-menu .layered-avatar { width: 64px; height: 64px; border: 2px solid #c39765; box-shadow: 0 0 0 3px #140e1c, inset 0 0 16px #b27a4c33; }
+.game-shell .hero-mini > span:not(.gold) { flex: 1 1 90px; }
+.game-shell .hero-mini b { font-size: 1.15rem; }
+.game-shell .hero-mini small { font-size: .85rem; }
+.game-shell .hero-mini .gold { gap: 8px; margin-left: 8px; font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; max-width: 100%; overflow-wrap: anywhere; }
+.game-shell .hero-mini .gold .game-icon { width: 40px; height: 40px; flex-shrink: 0; }
+.game-shell .language-toggle, .setup-language-toggle { min-width: 96px; min-height: 48px; padding: 11px 16px; font-size: 1.05rem; font-weight: 700; border: 1px solid #c39765; border-radius: 9px; background: linear-gradient(#493145,#2b2034); color: #ffe0a6; box-shadow: inset 0 1px #ffdf9f22, 0 3px 0 #120d18; }
+.game-shell .language-toggle:focus-visible, .setup-language-toggle:focus-visible, .profile-menu summary:focus-visible { outline: 3px solid #ffe0a6; outline-offset: 4px; }
+.game-shell .hero-banner .level .global-vitals .game-button.rest-control { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 64px; margin: 12px 0 16px; padding: 12px 14px; text-align: left; border-color: #84998b; background: linear-gradient(120deg,#394240,#282735); color: #f6e9cf; }
+.rest-control-icon { flex: 0 0 48px; width: 48px; height: 48px; object-fit: contain; filter: drop-shadow(0 2px 4px #100b18aa); }
+.rest-control > span:last-child { min-width: 0; }
+.rest-control strong { display: block; font-size: .95rem; line-height: 1.35; }
+.game-shell .global-vitals .rest-control small { display: block; margin: 5px 0 0; font-size: .75rem; line-height: 1.4; color: #c6d4c6; }
+.game-shell .hero-banner .level .global-vitals .game-button.rest-control.is-resting { border-color: #abd2ab; background: linear-gradient(120deg,#40584c,#293d38); }
+@media (max-width: 400px) {
+  .game-shell > header { column-gap: 8px; }
+  .game-shell > header .lifequest-brand { flex: 1 1 0; min-width: 0; }
+  .game-shell > header .lifequest-logo { width: 100%; }
+  .game-shell > header .language-toggle { flex-shrink: 0; min-width: 86px; padding: 10px; margin: 0; }
+  .game-shell .hero-mini .gold { margin-left: auto; }
+  .setup-language-toggle { top: 16px; right: 16px; }
+}
+.game-shell > header { height: auto; min-height: 92px; gap: 16px; padding-top: 12px; padding-bottom: 12px; }
+.welcome-screen { padding: 80px 24px 48px; place-content: start center; gap: 28px; }
+.welcome-heading { max-width: 760px; margin: 0 auto; }
+.lifequest-brand-large { justify-content: center; gap: 18px; margin-bottom: 30px; }
+.welcome-screen h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.25; margin: 14px 0; text-wrap: balance; }
+.welcome-screen .tagline { color: #d1bdbe; line-height: 1.75; margin: 0; }
+.welcome-screen .creation-panel { padding: 24px; gap: 28px; border: 1px solid #a27a54; background: linear-gradient(135deg,#322538f5,#1c1624f5); box-shadow: 0 20px 60px #0007,inset 0 1px #ffe2a622; border-radius: 18px; margin: 0 auto; }
+.welcome-screen .creation-preview { position: relative; overflow: hidden; padding: 24px 16px; border-color: #9a7457; background: linear-gradient(#211627ab,#201626db),url('/assets/art-v1/hero-chronicle.jpg') center / cover; }
+.welcome-screen .creation-avatar { background: radial-gradient(ellipse,#71504488,#1c1426aa); border-radius: 50%; filter: none; }
+.welcome-screen .creation-preview > strong { color: #ffe0a4; font: 1.6rem 'MedievalSharp',serif; overflow-wrap: anywhere; max-width: 100%; }
+.creation-preview-caption { display: flex; align-items: center; justify-content: center; gap: 8px; padding-top: 20px; color: #c8b3ad; font-size: .75rem; line-height: 1.6; text-align: center; }
+.creation-preview-caption .game-icon { width: 32px; height: 32px; }
+.welcome-screen .creation-fields { gap: 15px; }
+.welcome-screen .creation-fields h2 { font-size: 1.8rem; }
+.welcome-screen .creation-fields label { display: grid; gap: 7px; color: #e3cbb3; font-size: .8rem; min-width: 0; }
+.welcome-screen input,.welcome-screen select { display: block; width: 100%; min-width: 0; min-height: 44px; padding: 10px 12px; border: 1px solid #785665; border-radius: 8px; background: #17121fe8; color: #fff0d8; }
+.welcome-screen input:focus-visible,.welcome-screen select:focus-visible { outline: 2px solid #e4b579; outline-offset: 2px; }
+.welcome-screen .creation-note { padding: 12px; border-left: 2px solid #aa815a; background: #17121d66; line-height: 1.65; margin: 0; }
+.welcome-screen .welcome-start { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 13px; border: 1px solid #e4b579; border-radius: 8px; background: linear-gradient(#a57244,#684036); color: #fff0d1; font-weight: 700; box-shadow: 0 3px 0 #160e1e; }
+.welcome-start .game-icon { width: 30px; height: 30px; }
+.welcome-start:disabled { opacity: .45; cursor: not-allowed; }
+.welcome-start:hover:not(:disabled) { filter: brightness(1.1); }
+.welcome-local { text-align: center; color: #bca7ae; font-size: .7rem; line-height: 1.6; }
+@media(max-width:650px) {
+  .game-shell > header .lifequest-logo { width: 230px; }
+  .lifequest-brand-large .lifequest-logo { width: min(560px,100%); }
+  .welcome-screen { padding: 78px 16px 30px; }
+  .lifequest-brand-large { gap: 10px; }
+  .welcome-screen .creation-panel { width: 100%; grid-template-columns: 1fr; padding: 16px; gap: 22px; }
+  .welcome-screen .creation-options { grid-template-columns: 1fr 1fr; }
+  .welcome-screen .creation-avatar { max-width: 180px; }
+}
